@@ -1,7 +1,6 @@
 .task-container {
   font-size: 1.6rem;
   color: var(--purple);
-  width: 80%;
   background: var(--black-purple);
   margin: 1.7rem auto;
   display: flex;

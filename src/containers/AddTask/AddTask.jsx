@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { RiAddFill } from 'react-icons/ri';
 import './AddTask.css';
 
 function InputAddTask({ handleTaskAddition }) {
@@ -15,9 +16,15 @@ function InputAddTask({ handleTaskAddition }) {
 
   return (
     <div className="add-task-container">
-      <input type="text" value={inputData} onChange={handleInputData} />
-      <button type="button" onClick={handleAddTask}>
-        ADD
+      <input
+        type="text"
+        value={inputData}
+        onChange={handleInputData}
+        className="input-add-task"
+        placeholder="Add new task"
+      />
+      <button type="button" onClick={handleAddTask} className="button-add-task">
+        <RiAddFill />
       </button>
     </div>
   );
