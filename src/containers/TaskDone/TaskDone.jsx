@@ -3,7 +3,7 @@ import './TaskDone.css';
 function TaskDone({ task }) {
   return (
     <div className="task-done-container">
-      <div>{task.name}</div>
+      <div className="task-done">{task.name}</div>
     </div>
   );
 }
