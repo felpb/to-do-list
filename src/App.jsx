@@ -1,5 +1,7 @@
+import Home from './containers/Home/Home';
+
 function App() {
-  return <h1>Start</h1>;
+  return <Home />;
 }
 
 export default App;

@@ -6,5 +6,18 @@
 }
 
 :root {
+  font-family: Inter, sans-serif;
+
+  --black: #15101c;
+  --black-purple-light: #1D1825;
+  --black-purple: #15101C;
+  --purple: #9E78CF;
+  --green: #78CFB0;
+  --white: #FFFFFF;
+
   font-size: 62.5%;
+}
+
+body {
+  background: var(--black);
 }
