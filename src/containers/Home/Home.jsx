@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import RenderTasks from '../RenderTasks/RenderTasks';
 import './Home.css';
 
 function Home() {
@@ -20,7 +21,11 @@ function Home() {
     },
   ]);
 
-  return <div className="container">Start</div>;
+  return (
+    <div className="container">
+      <RenderTasks tasks={tasks} />
+    </div>
+  );
 }
 
 export default Home;
