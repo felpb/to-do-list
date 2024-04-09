@@ -1,0 +1,27 @@
+.task-container {
+  font-size: 1.6rem;
+  color: var(--purple);
+  width: 80%;
+  background: var(--black-purple);
+  margin: 1.7rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+}
+
+.task-buttons {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.check-button, .delete-button {
+  background-color: var(--black-purple);
+  border: none;
+  font-size: 2rem;
+  color: var(--purple);
+  cursor: pointer;
+  margin: 5px;
+}
