@@ -23,16 +23,19 @@ function Home() {
     },
   ]);
 
+  const [lastId, setLastId] = useState(3);
+
   const handleTaskAddition = (taskName) => {
     const newTasks = [
       ...tasks,
       {
-        id: Math.random(),
+        id: lastId + 1,
         name: taskName,
         done: false,
       },
     ];
     setTasks(newTasks);
+    setLastId(lastId + 1);
   };
 
   return (
