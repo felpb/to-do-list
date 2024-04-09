@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './Home.css';
 import RenderTasks from '../RenderTasks/RenderTasks';
+import Header from '../../components/Header/Header';
 
 function Home() {
   const [tasks] = useState([
@@ -23,7 +24,9 @@ function Home() {
 
   return (
     <div className="container">
+      <Header text="Tasks to do - 2" />
       <RenderTasks tasks={tasks.filter((task) => !task.done)} />
+      <Header text="Done - 1" />
       <RenderTasks tasks={tasks.filter((task) => task.done)} />
     </div>
   );
