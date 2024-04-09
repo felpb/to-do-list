@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import './Home.css';
 import RenderTasks from '../RenderTasks/RenderTasks';
+import AddTask from '../AddTask/AddTask';
 import Header from '../../components/Header/Header';
 
 function Home() {
-  const [tasks] = useState([
+  const [tasks, setTasks] = useState([
     {
       id: 1,
       name: 'Estudar Javascript',
@@ -22,8 +23,21 @@ function Home() {
     },
   ]);
 
+  const handleTaskAddition = (taskName) => {
+    const newTasks = [
+      ...tasks,
+      {
+        id: Math.random(),
+        name: taskName,
+        done: false,
+      },
+    ];
+    setTasks(newTasks);
+  };
+
   return (
     <div className="container">
+      <AddTask handleTaskAddition={handleTaskAddition} />
       <Header text="Tasks to do - 2" />
       <RenderTasks tasks={tasks.filter((task) => !task.done)} />
       <Header text="Done - 1" />
