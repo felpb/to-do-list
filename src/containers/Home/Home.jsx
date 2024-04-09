@@ -43,6 +43,16 @@ function Home() {
     setTasks(newTasks);
   };
 
+  const handleTaskCheck = (taskId) => {
+    const newTasks = tasks.map((task) => {
+      if (task.id === taskId) {
+        return { ...task, done: true };
+      }
+      return task;
+    });
+    setTasks(newTasks);
+  };
+
   return (
     <div className="container">
       <AddTask handleTaskAddition={handleTaskAddition} />
@@ -50,6 +60,7 @@ function Home() {
       <RenderTasks
         tasks={tasks.filter((task) => !task.done)}
         handleTaskDeletion={handleTaskDeletion}
+        handleTaskCheck={handleTaskCheck}
       />
       <Header text="Done - 1" />
       <RenderTasks tasks={tasks.filter((task) => task.done)} />

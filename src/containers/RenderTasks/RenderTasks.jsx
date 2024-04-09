@@ -1,7 +1,7 @@
 import Task from '../Task/Task';
 import TaskDone from '../TaskDone/TaskDone';
 
-function RenderTasks({ tasks, handleTaskDeletion }) {
+function RenderTasks({ tasks, handleTaskDeletion, handleTaskCheck }) {
   return (
     <div>
       {tasks.map((task) =>
@@ -12,6 +12,7 @@ function RenderTasks({ tasks, handleTaskDeletion }) {
             task={task}
             key={task.id}
             handleTaskDeletion={handleTaskDeletion}
+            handleTaskCheck={handleTaskCheck}
           />
         ),
       )}
