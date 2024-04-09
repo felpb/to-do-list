@@ -1,7 +1,7 @@
 import { IoMdCheckmark, IoMdTrash } from 'react-icons/io';
 import './Task.css';
 
-function Task({ task }) {
+function Task({ task, handleTaskDeletion }) {
   return (
     <div className="task-container">
       <div>{task.name}</div>
@@ -10,7 +10,11 @@ function Task({ task }) {
         <button className="check-button" type="button">
           <IoMdCheckmark />
         </button>
-        <button className="delete-button" type="button">
+        <button
+          className="delete-button"
+          type="button"
+          onClick={() => handleTaskDeletion(task.id)}
+        >
           <IoMdTrash />
         </button>
       </div>

@@ -38,11 +38,19 @@ function Home() {
     setLastId(lastId + 1);
   };
 
+  const handleTaskDeletion = (taskId) => {
+    const newTasks = tasks.filter((task) => task.id !== taskId);
+    setTasks(newTasks);
+  };
+
   return (
     <div className="container">
       <AddTask handleTaskAddition={handleTaskAddition} />
       <Header text="Tasks to do - 2" />
-      <RenderTasks tasks={tasks.filter((task) => !task.done)} />
+      <RenderTasks
+        tasks={tasks.filter((task) => !task.done)}
+        handleTaskDeletion={handleTaskDeletion}
+      />
       <Header text="Done - 1" />
       <RenderTasks tasks={tasks.filter((task) => task.done)} />
     </div>
