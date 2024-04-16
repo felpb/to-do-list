@@ -56,13 +56,15 @@ function Home() {
   return (
     <div className="container">
       <AddTask handleTaskAddition={handleTaskAddition} />
-      <Header text="Tasks to do - 2" />
+      <Header
+        text={`Tasks to do - ${tasks.filter((task) => !task.done).length}`}
+      />
       <RenderTasks
         tasks={tasks.filter((task) => !task.done)}
         handleTaskDeletion={handleTaskDeletion}
         handleTaskCheck={handleTaskCheck}
       />
-      <Header text="Done - 1" />
+      <Header text={`Done - ${tasks.filter((task) => task.done).length}`} />
       <RenderTasks tasks={tasks.filter((task) => task.done)} />
     </div>
   );
